@@ -14,6 +14,7 @@
     var text = elem.text();
     var issue = /^.+(AAPP-\d+)$/.exec(text)[1];
     var url = 'https://adespresso.atlassian.net/browse/'+issue;
+    elem.attr('title', null);
     elem.html('<a href="'+url+'" target="_blank" title="See issue on Jira">'+elem.text()+'</a>');
 })();
 
