@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GH Jira
 // @namespace    http://adespresso.com/
-// @version      1.0
+// @version      1.1
 // @description  Linkifies branch name
 // @author       Massimiliano Cannarozzo
 // @include      /^https://github.com/adespresso/adespresso/pull/\d+/
