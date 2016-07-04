@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GH Jira
 // @namespace    http://adespresso.com/
-// @version      1.3
+// @version      1.4
 // @description  Linkifies branch name
 // @author       Massimiliano Cannarozzo
 // @updateURL    https://raw.githubusercontent.com/adespresso/monkey-tools/master/github/jira-issue.user.js
@@ -11,9 +11,9 @@
 // ==/UserScript==
 
 function linkifyBranchName() {
-    var elem = $(".current-branch:contains('AAPP')").last();
+    var elem = $(".current-branch:contains('AAPP'), .current-branch:contains('BUGS')").last();
     var text = elem.text();
-    var issue = /^.+(AAPP-\d+)$/.exec(text)[1];
+    var issue = /^.+((AAPP|BUGS)-\d+)$/.exec(text)[1];
     var url = 'https://adespresso.atlassian.net/browse/'+issue;
     elem.attr('title', null);
     elem.html(
@@ -22,5 +22,5 @@ function linkifyBranchName() {
     );
 }
 (function() {
-    waitForKeyElements(".current-branch:contains('AAPP')", linkifyBranchName);
+    waitForKeyElements(".current-branch:contains('AAPP'), .current-branch:contains('BUGS')", linkifyBranchName);
 })();
