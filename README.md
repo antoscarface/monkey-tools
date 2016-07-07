@@ -4,4 +4,5 @@ A collection of GreaseMonkey / TamperMonkey / Any monkey scripts we use in AdEsp
 ## Available monkeys
 ### GitHub
 * [Linkifies branch name](https://raw.githubusercontent.com/adespresso/monkey-tools/master/github/jira-issue.user.js)
+* [JIRA sidebar](https://raw.githubusercontent.com/adespresso/monkey-tools/master/github/jira-sidebar-item.user.js)
 
