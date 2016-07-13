@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GH Jira
 // @namespace    http://adespresso.com/
-// @version      1.2
+// @version      1.3
 // @description  Linkifies branch name
 // @author       Massimiliano Cannarozzo
 // @updateURL    https://raw.githubusercontent.com/adespresso/monkey-tools/master/github/jira-issue.user.js
@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 function linkifyBranchName() {
-    var elem = $(".current-branch:contains('AAPP')").first();
+    var elem = $(".current-branch:contains('AAPP')").last();
     var text = elem.text();
     var issue = /^.+(AAPP-\d+)$/.exec(text)[1];
     var url = 'https://adespresso.atlassian.net/browse/'+issue;
