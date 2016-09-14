@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 ### Added
 - JIRA sidebar with GitHub details
 
+### Changed
+- BUGS related branch name are now linkified too
+
 ## 2016-07-07
 ### Added
 - GitHub sidebar with JIRA details
