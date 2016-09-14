@@ -18,8 +18,8 @@ var cachedResponse = null;
 var jiraStyle = GM_getResourceText('jira');
 
 function buildStyleElement() {
-    var style = document.createElement("style");
-    style.setAttribute("type", "text/css");
+    var style = document.createElement('style');
+    style.setAttribute('type', 'text/css');
     style.innerHTML = jiraStyle;
 
     return style;
@@ -31,16 +31,16 @@ function wrapSidebarItem(sidebarItem) {
 
     var wrapper = {
         element: sidebarItem,
-        prependTo: function(element) {
+        prependTo: function (element) {
             return sidebarItem.prependTo(element);
         },
-        append: function(stuff) {
+        append: function (stuff) {
             return content.append(stuff);
         },
-        html: function(stuff) {
+        html: function (stuff) {
             return content.html(stuff);
         },
-        find: function(selector) {
+        find: function (selector) {
             return content.find(selector);
         },
     };
@@ -60,7 +60,7 @@ function getSidebarItem(id) {
 
 function buildSidebarItem(id) {
     var sidebarItem = $(
-        '<div id="'+id+'" class="discussion-sidebar-item">' +
+        '<div id="' + id + '" class="discussion-sidebar-item">' +
         '   <h3 class="discussion-sidebar-heading">Jira</h3>' +
         '   <div class="content"></div>' +
         '</div>'
@@ -70,9 +70,9 @@ function buildSidebarItem(id) {
 }
 
 function buildIssueLink(issue, summary) {
-    var url = 'https://adespresso.atlassian.net/browse/'+issue;
+    var url = 'https://adespresso.atlassian.net/browse/' + issue;
 
-    return $('<a href="'+url+'" target="_top" style="vertical-align: middle">'+issue+'</a>')
+    return $('<a href="' + url + '" target="_top" style="vertical-align: middle">' + issue + '</a>')
         .attr('title', summary);
 }
 
@@ -120,12 +120,12 @@ function injectOrUpdateJiraStatus(response) {
             // We don't want Jira's gray default background.
             .css({ backgroundColor: 'transparent' })
             .append(buildIssueLink(issue, summary))
-            .append(' <span class="aui-lozenge jira-issue-status-lozenge-'+status.statusCategory.colorName+'" style="vertical-align: middle">'+status.name+'</span>');
+            .append(' <span class="aui-lozenge jira-issue-status-lozenge-' + status.statusCategory.colorName + '" style="vertical-align: middle">' + status.name + '</span>');
     }
 }
 
 function main() {
-    var elem = $(".current-branch,h1").find(":contains('AAPP')").last();
+    var elem = $('.current-branch,h1').find(":contains('AAPP')").last();
     var text = elem.text();
     var issue = /(AAPP-\d+)/.exec(text)[1];
 
@@ -136,15 +136,15 @@ function main() {
     }
     run = issue;
 
-    var url = 'https://adespresso.atlassian.net/rest/api/latest/issue/'+issue+'?fields=status,summary';
+    var url = 'https://adespresso.atlassian.net/rest/api/latest/issue/' + issue + '?fields=status,summary';
     GM_xmlhttpRequest({
-        method: "GET",
+        method: 'GET',
         url: url,
         onload: injectOrUpdateJiraStatus,
     });
 }
 
-(function() {
+(function () {
     waitForKeyElements(".current-branch:contains('AAPP'),h1:contains('AAPP')", main);
 })();
 
