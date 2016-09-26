@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2016-09-26
+### Changed
+- JIRA sidebar now shows PR branch name instead of ID
+
 ## 2016-09-14
 ### Added
 - JIRA sidebar with GitHub details
