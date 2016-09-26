@@ -45,7 +45,7 @@ function injectOrUpdateGithubStatus(response) {
             prBranches.push(pr.source.branch);
             var el = $('<li><a href="'+pr.url+'">'+
                 '<span class="aui-avatar-inner aui-icon aui-icon-small aui-iconfont-devtools-repository-forked"></span> '+
-                pr.id+'</a>&nbsp;<span class="aui-lozenge aui-lozenge-subtle '+prStatusClassMap[pr.status]+'">'+
+                pr.source.branch+'</a>&nbsp;<span class="aui-lozenge aui-lozenge-subtle '+prStatusClassMap[pr.status]+'">'+
                 pr.status+ '</span></li>');
             els.push(el);
         });
