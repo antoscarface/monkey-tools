@@ -1,4 +1,4 @@
-# AdEspresso Monkeys
+# AdEspresso Monkeys [![Travis](https://img.shields.io/travis/adespresso/monkey-tools.svg?maxAge=2592000)](https://travis-ci.org/adespresso/monkey-tools/)
 A collection of GreaseMonkey / TamperMonkey / Any monkey scripts we use in AdEspresso to simplify our daily lives
 
 ## Available monkeys
