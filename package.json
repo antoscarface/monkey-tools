@@ -1,0 +1,29 @@
+{
+  "name": "monkey-tools",
+  "version": "1.0.0",
+  "description": "AdEspresso Monkeys",
+  "private": "true",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "eslint --ext=\"js\" ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adespresso/monkey-tools.git"
+  },
+  "keywords": [
+    "greasemonkey",
+    "tampermonkey"
+  ],
+  "author": "AdEspresso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adespresso/monkey-tools/issues"
+  },
+  "homepage": "https://github.com/adespresso/monkey-tools#readme",
+  "devDependencies": {
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb-base": "^7.1.0",
+    "eslint-plugin-import": "^1.16.0"
+  }
+}

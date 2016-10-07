@@ -14,13 +14,13 @@ function linkifyBranchName() {
     var elem = $(".current-branch:contains('AAPP'), .current-branch:contains('BUGS')").last();
     var text = elem.text();
     var issue = /^.+((AAPP|BUGS)-\d+)$/.exec(text)[1];
-    var url = 'https://adespresso.atlassian.net/browse/'+issue;
+    var url = 'https://adespresso.atlassian.net/browse/' + issue;
     elem.attr('title', null);
     elem.html(
         '<img src="https://cloud.githubusercontent.com/assets/442835/16224961/b1bf3b26-37a4-11e6-96cd-7ebd6dad43fe.png" width="16px" style="vertical-align: middle; position: relative; top: -1px;">' +
-        '<a href="'+url+'" target="_blank" title="See issue on Jira" style="vertical-align: middle">'+elem.text()+'</a>'
+        '<a href="' + url + '" target="_blank" title="See issue on Jira" style="vertical-align: middle">' + elem.text() + '</a>'
     );
 }
-(function() {
+(function () {
     waitForKeyElements(".current-branch:contains('AAPP'), .current-branch:contains('BUGS')", linkifyBranchName);
 })();
