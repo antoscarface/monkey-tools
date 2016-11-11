@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2016-11-10
+### Added
+-  GitHub notification of completed checks on PRs
+
 ## 2016-09-26
 ### Added
 - eslint to enforce CS
