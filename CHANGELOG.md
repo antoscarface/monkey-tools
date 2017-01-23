@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2016-12-14
+### Added
+- Fills description for GitHub PRs related to JIRA issue
+- Remove issue from PR title
+
 ## 2016-09-26
 ### Added
 - eslint to enforce CS
