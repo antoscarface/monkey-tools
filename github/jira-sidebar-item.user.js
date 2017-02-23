@@ -125,7 +125,7 @@ function injectOrUpdateJiraStatus(response) {
 }
 
 function main() {
-    var elem = $('.current-branch,h1').find(":contains('AAPP')").last();
+    var elem = $('.current-branch,h1').find(":contains('AAPP'), :contains('AW'), :contains('WWP')").last();
     var text = elem.text();
     var issue = /(AAPP-\d+)/.exec(text)[1];
 
@@ -146,5 +146,7 @@ function main() {
 
 (function () {
     waitForKeyElements(".current-branch:contains('AAPP'),h1:contains('AAPP')", main);
+    waitForKeyElements(".current-branch:contains('AW'),h1:contains('AW')", main);
+    waitForKeyElements(".current-branch:contains('WWP'),h1:contains('WWP')", main);
 })();
 

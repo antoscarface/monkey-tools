@@ -11,9 +11,9 @@
 // ==/UserScript==
 
 function linkifyBranchName() {
-    var elem = $(".current-branch:contains('AAPP'), .current-branch:contains('BUGS')").last();
+    var elem = $(".current-branch:contains('AAPP'), .current-branch:contains('BUGS'), .current-branch:contains('AW'), .current-branch:contains('WWP')").last();
     var text = elem.text();
-    var issue = /^.+((AAPP|BUGS)-\d+)$/.exec(text)[1];
+    var issue = /^.+((AAPP|BUGS|AW|WWP)-\d+)$/.exec(text)[1];
     var url = 'https://adespresso.atlassian.net/browse/' + issue;
     elem.attr('title', null);
     elem.html(
@@ -22,5 +22,5 @@ function linkifyBranchName() {
     );
 }
 (function () {
-    waitForKeyElements(".current-branch:contains('AAPP'), .current-branch:contains('BUGS')", linkifyBranchName);
+    waitForKeyElements(".current-branch:contains('AAPP'), .current-branch:contains('BUGS'), .current-branch:contains('AW'), .current-branch:contains('WWP')", linkifyBranchName);
 })();

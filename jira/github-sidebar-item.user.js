@@ -6,7 +6,7 @@
 // @author       Massimiliano Cannarozzo
 // @updateURL    https://raw.githubusercontent.com/adespresso/monkey-tools/master/jira/github-sidebar-item.user.js
 // @grant        GM_xmlhttpRequest
-// @include      /^https://adespresso.atlassian.net/browse/(AAPP|BUGS)-\d+
+// @include      /^https://adespresso.atlassian.net/browse/(AAPP|BUGS|AW|WWP)-\d+
 // @require      https://code.jquery.com/jquery-latest.min.js
 // @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
 // ==/UserScript==
