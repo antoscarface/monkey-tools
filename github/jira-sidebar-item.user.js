@@ -7,7 +7,7 @@
 // @updateURL    https://raw.githubusercontent.com/adespresso/monkey-tools/master/github/jira-sidebar-item.user.js
 // @grant        GM_getResourceText
 // @grant        GM_xmlhttpRequest
-// @include      /^https://github.com/adespresso/adespresso/pull/\d+/
+// @include      /^https://github.com/adespresso/.+/pull/\d+/
 // @require      https://code.jquery.com/jquery-latest.min.js
 // @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @resource     jira https://adespresso.atlassian.net/download/contextbatch/css/_super/batch.css?atlassian.aui.raphael.disabled=true&relative-url=true
@@ -125,9 +125,9 @@ function injectOrUpdateJiraStatus(response) {
 }
 
 function main() {
-    var elem = $('.head-ref,h1').find(":contains('AAPP')").last();
+    var elem = $('.head-ref,h1').find(":contains('AAPP'), :contains('AW'), :contains('WWP')").last();
     var text = elem.text();
-    var issue = /(AAPP-\d+)/.exec(text)[1];
+    var issue = /((AAPP|AW|WWP)-\d+)/.exec(text)[1];
 
     // We don't want to make the XHR request more than once per page load/issue.
     if (run === issue) {
@@ -145,6 +145,5 @@ function main() {
 }
 
 (function () {
-    waitForKeyElements(".head-ref:contains('AAPP'),h1:contains('AAPP')", main);
+    waitForKeyElements(".head-ref:contains('AAPP'),h1:contains('AAPP'),.head-ref:contains('AW'),h1:contains('AW'),.head-ref:contains('WWP'),h1:contains('WWP')", main);
 })();
-
