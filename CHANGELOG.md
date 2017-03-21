@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2017-03-03
+### Fixed
+- GitHub scripts are now fully functional again after GH UI changes
+
 ## 2016-12-14
 ### Added
 - Fills description for GitHub PRs related to JIRA issue

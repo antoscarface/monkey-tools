@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GH Jira Issue Sidebar
 // @namespace    http://adespresso.com/
-// @version      1.0
+// @version      1.1
 // @description  Add Jira sidebar item to GitHub pull request page
 // @author       Massimiliano Cannarozzo
 // @updateURL    https://raw.githubusercontent.com/adespresso/monkey-tools/master/github/jira-sidebar-item.user.js
@@ -125,7 +125,7 @@ function injectOrUpdateJiraStatus(response) {
 }
 
 function main() {
-    var elem = $('.current-branch,h1').find(":contains('AAPP')").last();
+    var elem = $('.head-ref,h1').find(":contains('AAPP')").last();
     var text = elem.text();
     var issue = /(AAPP-\d+)/.exec(text)[1];
 
@@ -145,6 +145,6 @@ function main() {
 }
 
 (function () {
-    waitForKeyElements(".current-branch:contains('AAPP'),h1:contains('AAPP')", main);
+    waitForKeyElements(".head-ref:contains('AAPP'),h1:contains('AAPP')", main);
 })();
 
