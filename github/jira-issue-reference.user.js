@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GH PR Jira Reference filler
 // @namespace    http://adespresso.com/
-// @version      1.0
+// @version      1.2
 // @description  Fills the reference to the JIRA issue automatically
 // @author       Massimiliano Cannarozzo
 // @updateURL    https://raw.githubusercontent.com/adespresso/monkey-tools/master/github/jira-issue-reference.user.js
@@ -14,8 +14,11 @@ function fillReference(issue) {
     $('#pull_request_body').val(`Ref. [${issue}](https://adespresso.atlassian.net/browse/${issue})`);
 }
 function removeReferenceFromTitle(issue) {
-    var title = $('#pull_request_title').val()
-        .replace(issue.replace('-', ' ').toLowerCase(), '').trim();
+    var title = $('#pull_request_title')
+        .val()
+        .replace(issue.replace('-', ' ').toLowerCase(), '')
+        .replace('noissue', '')
+        .trim();
     $('#pull_request_title').val(title);
 }
 function fixReference() {
