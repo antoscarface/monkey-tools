@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2017-05-12
+### Added
+- Linkifies issue name for PlanningPoker leading to related JIRA issue
+
 ## 2017-03-23
 ### Added
 - Remove noissue from PR title
