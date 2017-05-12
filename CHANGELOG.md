@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## 2017-05-12
 ### Added
 - Linkifies issue name for PlanningPoker leading to related JIRA issue
+- Link Jira and GH tools to the website and plugin repositories as well
 
 ## 2017-03-23
 ### Added
