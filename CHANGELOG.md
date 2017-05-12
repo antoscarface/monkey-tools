@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2017-03-23
+### Added
+- Remove noissue from PR title
+
 ## 2017-03-03
 ### Fixed
 - GitHub scripts are now fully functional again after GH UI changes
